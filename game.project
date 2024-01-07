@@ -1,0 +1,31 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+render = /render/main.renderc
+
+[script]
+shared_state = 1
+
+[android]
+input_method = HiddenInputField
+
+[project]
+title = GameBase
+dependencies#0 = https://github.com/defold/lua-language-server/releases/download/v0.0.5/release.zip
+dependencies#1 = https://github.com/subsoap/defos/archive/refs/tags/v2.7.1.zip
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
+
+[physics]
+scale = 0.02
+
+[input]
+repeat_delay = 0.0
+repeat_interval = 0.0
+game_binding = /libs/crit/all.input_bindingc
+
+[display]
+width = 960
+height = 720
+

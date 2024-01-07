@@ -1,0 +1,33 @@
+local monarch = require "libs.monarch.monarch"
+local Button = require "main.ui.default_button"
+local dispatcher = require "libs.crit.dispatcher"
+
+function init(self)
+  self.play_button = Button.new(gui.get_node("play_button"), {
+    on_state_change = Button.fade(),
+    action = function ()
+      dispatcher.dispatch("play_game")
+    end,
+  })
+
+  msg.post(".", "acquire_input_focus")
+end
+
+function final(self)
+end
+
+function update(self, dt)
+  -- pprint(self.play_button)
+end
+
+function on_message(self, message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	if self.play_button.on_input(action_id, action) then
+		return true
+	end
+end
+
+function on_reload(self)
+end

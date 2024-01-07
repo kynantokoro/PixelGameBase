@@ -1,0 +1,22 @@
+local monarch = require "libs.monarch.monarch"
+local dispatcher = require "libs.crit.dispatcher"
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	msg.post("#", "show_menu")
+  self.sub_id = dispatcher.subscribe({ hash("show_menu"), hash("play_game") })
+
+  dispatcher.dispatch("show_menu")
+end
+
+function final(self)
+  dispatcher.unsubscribe(self.sub_id)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("show_menu") then
+		monarch.show("menu")
+  elseif message_id == hash("play_game") then
+    monarch.show("game")
+	end
+end

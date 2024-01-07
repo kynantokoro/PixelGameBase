@@ -1,0 +1,5 @@
+script: "/render/main.render_script"
+materials {
+  name: "game_render_target"
+  material: "/render/materials/game_render_target.material"
+}

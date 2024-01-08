@@ -1,4 +1,4 @@
-# Simple GameBase Template
+# Pixel GameBase Template
 ## Overview
 This template is designed for the development of pixel resolution games. It includes a selection of libraries and codes that provide a starting point for a simple game.
 
